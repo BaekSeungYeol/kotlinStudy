@@ -1,4 +1,4 @@
-package coroutine
+package appendix.coroutine
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
