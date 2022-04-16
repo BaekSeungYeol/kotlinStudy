@@ -1,18 +1,16 @@
 package chapter4
 
-open class User(val nickname: String, val isSubscribed: Boolean = false) {
-}
+class User private constructor(val nickname: String){
 
-class TwitterUser(nickname: String) : User(nickname) {
-
+    companion object {
+        fun newSubscribingUser(email: String) = User(email.substringBefore('@'))
+        fun newFacebookUser(accountId: Int) = User(getFacebookName(accountId))
+    }
 }
+fun getFacebookName(facebookId : Int) : String = "Do Something"
+
 fun main() {
-    val hyun = User("현석")
-    println(hyun.isSubscribed)
-
-    val gye = User("계영", false)
-    println(gye.isSubscribed)
-
-    val hey = User("혜원", isSubscribed = false)
-    println(hey.isSubscribed)
+    val subscribingUser = User.newSubscribingUser("bob@gmail.com")
+    val facebookUser = User.newFacebookUser(4)
+    println(subscribingUser.nickname)
 }
