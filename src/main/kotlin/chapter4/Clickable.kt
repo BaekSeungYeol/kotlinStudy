@@ -5,7 +5,7 @@ interface Clickable {
     fun showOff() = println("I'm clickable")
 }
 
-class Button: Clickable, Focusable{
+private class Button: Clickable, Focusable{
     override fun click() = println("I was Clicked")
     override fun showOff() {
         super<Clickable>.showOff()
