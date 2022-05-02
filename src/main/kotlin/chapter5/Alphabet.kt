@@ -35,6 +35,14 @@ fun alphabet3() = StringBuilder().apply {
     append("\n Now I know the alphabet!")
 }.toString()
 
+fun alphabet4() = buildString {
+    for(letter in 'A'..'Z') {
+        append(letter)
+    }
+    append("\n Now I know the alphabet !")
+}
 fun main() {
     println(alphabet())
+    println(alphabet4())
+
 }
