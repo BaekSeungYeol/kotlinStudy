@@ -1,6 +1,6 @@
 package inaction.chapter2
 
-import chapter2.Color
+import inaction.chapter2.Color
 fun getMnemonic(color: Color) =
     when(color) {
         Color.RED -> "Richard"

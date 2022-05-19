@@ -18,4 +18,11 @@ fun main() {
 
     val middleNameLength: Int = p.middle?.length ?: 0
     val p1 = p as? Person
+
+    val number = 42
+    val num = number.toString(2)
+
+    val joke = """
+        Actually, the...
+    """.trimIndent()
 }

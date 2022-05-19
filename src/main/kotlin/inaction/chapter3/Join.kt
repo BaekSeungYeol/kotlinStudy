@@ -1,6 +1,6 @@
 package inaction.chapter3
 
-import chapter3.lastChar as last
+import inaction.chapter3.lastChar as last
 
 var opCount = 0
 const val UNIX_LINE_SEPARATOR ="\n"

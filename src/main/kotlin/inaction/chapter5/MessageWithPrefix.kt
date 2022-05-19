@@ -1,7 +1,7 @@
 package inaction.chapter5
 
-import chapter3.Button
-import chapter4.AnotherPerson
+import inaction.chapter3.Button
+import inaction.chapter4.AnotherPerson
 
 fun printMessagesWithPrefix(messages: Collection<String>, prefix: String) {
     messages.forEach {
