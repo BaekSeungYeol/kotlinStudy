@@ -1,5 +1,7 @@
 package inaction.chapter9
 
+import java.util.ServiceLoader
+
 fun <T : Comparable<T>> max(first: T, second: T): T {
     return if (first > second) first else second
 }
@@ -28,6 +30,10 @@ class Processor<T : Any> {
 }
 
 inline fun <reified T> isA(value: Any) = value is T
+
+inline fun <reified T> loadService(): ServiceLoader<T>? {
+    return ServiceLoader.load(T::class.java)
+}
 
 fun main() {
     println(max("kotlin", "java"))
