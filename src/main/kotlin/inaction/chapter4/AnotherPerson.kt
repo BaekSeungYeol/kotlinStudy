@@ -1,7 +1,5 @@
 package inaction.chapter4
 
-import chapter4.*
-
 class AnotherPerson(val firstName: String, val lastName: String){
     companion object {
 
