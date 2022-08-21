@@ -19,4 +19,16 @@ internal class OrderItemTest {
             { assertThat(item1.product).isSameAs(item2.product) },
         )
     }
+
+    @Test
+    fun `destructure using component functions`() {
+        val p = Product("baseball", 10.0)
+
+        val (name,price,sale) = p
+        assertAll(
+            { assertEquals(p.name, name) },
+            { assertThat(p.price).isEqualTo(price) },
+            { assertThat(sale).isFalse() }
+        )
+    }
 }
