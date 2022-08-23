@@ -57,3 +57,13 @@ fun takeCareOfCats(cats : Herd<Cat>) {
     }
     feedAll(cats)
 }
+
+interface List<out T> : Collection<T> {
+    fun subList(fromIndex: Int, toIndex: Int) : List<T>
+}
+
+interface MutableList<T> : List<T>, MutableCollection<T> {
+    override fun add(element: T): Boolean
+}
+
+class Test<out T: Animal>(vararg animals: T) { }

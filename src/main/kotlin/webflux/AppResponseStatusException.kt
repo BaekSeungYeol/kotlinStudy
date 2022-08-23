@@ -1,0 +1,4 @@
+package webflux
+
+class AppResponseStatusException {
+}

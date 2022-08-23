@@ -1,11 +1,6 @@
 package effective.item8
 
+fun largestOf(vararg nums: Int) : Int = nums.max()!!
 fun main() {
-
-    val list = listOf<Map<Int,Int>>()
-
-    val emptyMap = list[0].orEmpty()
-
-    println(emptyMap)
-
+    largestOf()
 }
