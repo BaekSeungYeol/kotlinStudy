@@ -1,27 +1,31 @@
 package codeforces
 
-import java.util.TreeSet
-
 fun main() {
 
     val t = readln().toInt()
     repeat(t) {
-        val (n,k) = readln().split(" ").map{it.toInt()}
-        val arr = readln().split(" ").map{ it.toInt() }
-        var ans = 0
-        val breaks = TreeSet<Int>()
-        breaks.add(n-1)
-        for(i in 0 until n-1) {
-            if(arr[i] >= arr[i+1]*2) {
-                breaks.add(i)
+        val (h, w) = readln().split(" ").map { it.toInt() }
+        val arr = Array(h) { CharArray(w) }
+        (1..h)
+            .forEach {
+                arr[it - 1] = readln().toCharArray()
+            }
+
+        for(x in 0 until w) {
+            var nextSpace = h-1
+            for(y in h-1 downTo 0) {
+                if(arr[y][x] == 'o') {
+                    nextSpace =y-1
+                } else if(arr[y][x] == '*') {
+                    arr[y][x] = '.'
+                    arr[nextSpace][x] = '*'
+                    nextSpace--
+                }
             }
         }
-        for(i in 0 until n) {
-            val next = breaks.ceiling(i)
-            if(next -i  >= k) {
-                ans++
-            }
+        for(y in 0 until h) {
+            println(arr[y])
         }
-        println(ans)
+
     }
 }
