@@ -1,52 +1,50 @@
+import java.util.Arrays
+
 fun main() {
     val t = readln().toInt()
     repeat(t) {
         val n = readln().toInt()
         val input = Array(n) { mutableListOf<Int>() }
-        for (i in 0 until n) {
+        (0 until n).forEach { i ->
             input[i] = readln().split(" ").map { it.toInt() }.toMutableList()
         }
-        val withNum = Array(n) { mutableListOf<Int>() }
+
+        val withNumbers = Array(n) { mutableListOf<Int>() }
+
         for (i in 0 until n) {
             for (j in 0 until 2) {
-                withNum[--input[i][j]].add(i)
+                withNumbers[--input[i][j]].add(i)
             }
         }
-
-        for (list in withNum) {
-            if (list.size >= 3) {
+        for(list in withNumbers) {
+            if(list.size >= 3) {
                 println("NO")
                 return@repeat
             }
         }
 
-        val adj = Array(n) { mutableListOf<Int>()}
-        for (list in withNum) {
-            for (i in 0 until list.size) {
-                for (j in i + 1 until list.size) {
-                    adj[list[i]].add(list[j])
-                    adj[list[j]].add(list[i])
-                }
-            }
+        val adj = Array(n) { mutableListOf<Int>() }
+        for (list in withNumbers) {
+            adj[list[0]].add(list[1])
+            adj[list[1]].add(list[0])
         }
 
-        // check if bipartite
-        var works = true
-        val bfs = ArrayDeque<Int>()
         val visited = Array(n) { false }
         val color = Array(n) { false }
+        var works = true
+        val bfs = ArrayDeque<Int>()
         for (i in 0 until n) {
             if (visited[i]) continue
             visited[i] = true
             bfs.add(i)
-            while (bfs.isNotEmpty()) {
-                val at = bfs.removeFirst()
-                for (other in adj[at]) {
-                    if (!visited[other]) {
-                        visited[other] = true
-                        color[other] = !color[at]
-                        bfs.add(other)
-                    } else if (color[other] == color[at]) {
+            while (!bfs.isEmpty()) {
+                val cur = bfs.removeFirst()
+                for (next in adj[cur]) {
+                    if (!visited[next]) {
+                        visited[next] = true
+                        color[next] = !color[cur]
+                        bfs.add(next)
+                    } else if (color[next] == color[cur]) {
                         works = false
                     }
                 }
