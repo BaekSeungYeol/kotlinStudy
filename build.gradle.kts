@@ -41,6 +41,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.9.0")
 
+    implementation("com.auth0:java-jwt:3.9.0")
+
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
 
