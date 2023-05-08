@@ -16,9 +16,10 @@ open class View2 {
 
 class MyButton : View2 {
 
-//    constructor(ctx: Context) : this(ctx, MY_STYLE) {
-//
-//    }
+   constructor(ctx: Context) : super(ctx) {
+
+   }
+
 
     constructor(ctx: Context, attr: AttributeSet) :super(ctx, attr) {
 
