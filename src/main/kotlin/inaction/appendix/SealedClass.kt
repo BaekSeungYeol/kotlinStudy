@@ -1,6 +1,6 @@
 package inaction.appendix
 
-sealed class Expr
+sealed class Expr {}
 data class Num(val value: Int) : Expr()
 data class Sum(val left: Expr, val right: Expr) : Expr()
 

@@ -6,4 +6,5 @@ fun main() {
     val person1 = Person("아무개", false)
     println(person1.name)
     println(person1.isMarried)
+    person1.name
 }

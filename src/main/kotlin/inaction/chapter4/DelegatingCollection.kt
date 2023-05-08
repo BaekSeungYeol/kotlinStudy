@@ -30,6 +30,7 @@ class CountingSet<T>(
 ) : MutableCollection<T> by innerSet {
     var objectsAdded = 0
 
+
     override fun add(element: T) : Boolean {
         objectsAdded++
         return innerSet.add(element)

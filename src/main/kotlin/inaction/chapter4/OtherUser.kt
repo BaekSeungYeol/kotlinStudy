@@ -14,5 +14,7 @@ class OtherUser(val name: String) {
 
 fun main() {
     val user = OtherUser("Alice")
+    // println(user.address)
     user.address = "Elsenheimerstrasse 47 80687 Muenchen"
+    // println(user.address)
 }

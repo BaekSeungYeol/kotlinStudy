@@ -9,10 +9,11 @@ class Rectangle(private val height: Int, val width: Int) {
         }
 }
 
-fun createRandomRectangle() : Rectangle {
+fun createRandomRectangle(): Rectangle {
     val random = Random()
     return Rectangle(random.nextInt(), random.nextInt())
 }
+
 fun main() {
     println(createRandomRectangle().isSquare)
 }
