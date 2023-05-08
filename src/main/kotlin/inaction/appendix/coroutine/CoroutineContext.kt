@@ -15,6 +15,16 @@ fun test() {
         }
     }
 }
+fun convertQuery(query: String): String {
+    return if (query.isNotEmpty() && query.endsWith("/")) {
+        query.substring(0, query.length - 1)
+    } else {
+        query
+    }
+}
 fun main() {
     test()
+
+    println("dasdads".removeSuffix("/"))
+    println(convertQuery("ddddd"))
 }

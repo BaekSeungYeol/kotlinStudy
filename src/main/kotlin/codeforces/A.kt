@@ -1,23 +1,19 @@
-package codeforces
-
 fun main() {
 
-    val t = readln().toInt()
-    repeat(t) {
-        val s = readln().toCharArray()
-        val memory = HashSet<Char>()
-        var totalDay = 0
-        s.forEach {
-           memory.add(it)
-            if(memory.size == 4) {
-                memory.clear()
-                memory.add(it)
-                totalDay += 1
-            }
+    val T = readln().toInt()
+    for (tt in 0 until T) {
+        var minX = 0
+        var maxX = 0
+        var minY = 0
+        var maxY = 0
+        val n = readln().toInt()
+        for (i in 0 until n) {
+            val (x,y) = readln().split(" ").map{ it.toInt() }
+            minX = minX.coerceAtMost(x)
+            minY = minY.coerceAtMost(y)
+            maxX = maxX.coerceAtLeast(x)
+            maxY = maxY.coerceAtLeast(y)
         }
-        if(memory.isNotEmpty()) totalDay += 1
-        println(totalDay)
-
+        println(((maxX - minX) + (maxY - minY)) * 2)
     }
 }
-

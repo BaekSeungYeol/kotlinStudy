@@ -12,7 +12,8 @@ fun reportOperationCount() {
     println("Operation performed $opCount times")
 }
 
-fun String.lastChar() : Char = get(length-1)
+fun String.lastChar() : Char =
+    get(length - 1)
 
 fun main() {
     val c = "Kotlin".last()

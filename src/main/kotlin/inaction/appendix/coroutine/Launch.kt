@@ -13,6 +13,11 @@ fun now() = ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.MILLIS)
 
 fun log(msg: String) = println("${now()} : ${Thread.currentThread()} : ${msg}")
 
+fun launchInGlobalScope() {
+    GlobalScope.launch {
+        log("coroutine started.")
+    }
+}
 fun runBlockingExample() {
     runBlocking {
         launch {
@@ -23,6 +28,7 @@ fun runBlockingExample() {
 fun main() {
     log("main() started.")
     runBlockingExample()
+    // launchInGlobalScope()
     log("runBlockingExample() executed")
     Thread.sleep(5000L)
     log("main() terminated")
