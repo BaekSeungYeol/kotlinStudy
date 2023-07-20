@@ -32,21 +32,21 @@ class DependencyHandler {
     }
 }
 fun main() {
-    // val bavarianGreeter = Greeter("Servus")
-    // bavarianGreeter("Dmitry")
+    val bavarianGreeter = Greeter("Servus")
+    bavarianGreeter(name = "Dmitry")
     //
-    // val i1 = Issue("Idea-154446", "Idea", "Bug", "Major", "Save setings failed")
-    // val i2 = Issue("Kt-12183", "Kotlin", "Feature", "Normal", "Intention: convert several calls on the same re....")
-    // val predicate = ImportantIssuesPredicate("Idea")
-    // for(issue in listOf(i1,i2).filter(predicate)) {
-    //     println(issue.id)
-    // }
-    //
-    // val dependencies = DependencyHandler()
-    // dependencies.compile("org.jetbrains.kotlin:kotlin-stdli:1.0.0")
-    // dependencies {
-    //     compile("org.jetbrains.kotlin:kotlin-reflect:1.0.0")
-    // }
+    val i1 = Issue("Idea-154446", "Idea", "Bug", "Major", "Save setings failed")
+    val i2 = Issue("Kt-12183", "Kotlin", "Feature", "Normal", "Intention: convert several calls on the same re....")
+    val predicate = ImportantIssuesPredicate("Idea")
+    for(issue in listOf(i1,i2).filter(predicate)) {
+        println(issue.id)
+    }
+
+    val dependencies = DependencyHandler()
+    dependencies.compile("org.jetbrains.kotlin:kotlin-stdli:1.0.0")
+    dependencies {
+        compile("org.jetbrains.kotlin:kotlin-reflect:1.0.0")
+    }
 
     println("".isBlank())
 
