@@ -10,8 +10,4 @@ fun main() {
     val blackship = BlackShipFactory().orderShip("seung", "seung@naver.com")
     println(blackship)
 
-    // test
-    // test2
-    // test3
-
 }

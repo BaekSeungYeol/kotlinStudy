@@ -30,26 +30,16 @@ class StartWrapper(val value: String) {
             Unit
 }
 
-val Int.days: Period
-    get() = Period.ofDays(this)
-val Period.ago: LocalDate
-    get() = LocalDate.now() - this
-val Period.fromNow: LocalDate
-    get() = LocalDate.now() + this
 
 fun main() {
-    // val s = ""
-    // s should startWith("kot")
-    // s should start with "kot"
+    val s = ""
+    s should startWith("kot")
+    s should start with "kot"
     //
     // println(1.days.ago)
     // println(1.days.fromNow)
 
-    val s = "aa"
-
-    s?.let {
-        println("aa")
-    }
+    println("aa")
     println("bb")
 
     val arr = mutableSetOf<String>()
